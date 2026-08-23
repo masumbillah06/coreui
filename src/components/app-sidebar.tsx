@@ -22,37 +22,53 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: (
-        <GalleryVerticalEndIcon />
-      ),
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: (
-        <AudioLinesIcon
-        />
-      ),
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: (
-        <TerminalIcon
-        />
-      ),
-      plan: "Free",
-    },
-  ],
+  // teams: [
+  //   {
+  //     name: "Acme Inc",
+  //     logo: (
+  //       <GalleryVerticalEndIcon />
+  //     ),
+  //     plan: "Enterprise",
+  //   },
+  //   {
+  //     name: "Acme Corp.",
+  //     logo: (
+  //       <AudioLinesIcon
+  //       />
+  //     ),
+  //     plan: "Startup",
+  //   },
+  //   {
+  //     name: "Evil Corp.",
+  //     logo: (
+  //       <TerminalIcon
+  //       />
+  //     ),
+  //     plan: "Free",
+  //   },
+  // ],
   navMain: [
     {
-      title: "Playground",
+      title: "Charts",
       url: "#",
       icon: (
-        <TerminalSquareIcon
+        <Image 
+          src="/chart-icon.svg"
+          alt="Chart"
+          width={18}
+          height={18}
+        />
+      )
+    },
+    {
+      title: "Components",
+      url: "#",
+      icon: (
+        <Image 
+          src="/comp-icon.svg"
+          alt="Components"
+          width={18}
+          height={18}
         />
       ),
       isActive: true,
@@ -72,15 +88,31 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Data Grid",
       url: "#",
       icon: (
-        <BotIcon
+        <Image 
+          src="/grid-icon.svg"
+          alt="Data Grid" 
+          width={18}
+          height={18}
+        />
+      )
+    },
+    {
+      title: "Forms",
+      url: "#",
+      icon: (
+        <Image
+          src="/form-icon.svg"
+          alt="Forms"
+          width={18}
+          height={18}
         />
       ),
       items: [
         {
-          title: "Genesis",
+          title: "Genesis", 
           url: "#",
         },
         {
@@ -94,10 +126,14 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Icons",
       url: "#",
       icon: (
-        <BookOpenIcon
+        <Image
+          src="/icon-icon.svg"
+          alt="Icons"
+          width={18}
+          height={18}
         />
       ),
       items: [
@@ -185,7 +221,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             className="h-8 w-auto"
             width={128}
             height={32}
-          />
+          /> 
         </div>
       </SidebarHeader>
       <SidebarContent>
