@@ -17,23 +17,29 @@ import {
 } from "@/components/ui/sidebar"
 import { ChevronRightIcon } from "lucide-react"
 
-export function NavMain({
-  items,
-}: {
-  items: {
+export type NavMainItem = {
+  title: string
+  url: string
+  icon?: React.ReactNode
+  isActive?: boolean
+  items?: {
     title: string
     url: string
-    icon?: React.ReactNode
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
   }[]
+}
+
+export function NavMain({
+  items,
+  label,
+}: {
+  items: NavMainItem[]
+  label: string
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>
+        <span className="font-roboto font-extrabold">{label}</span>
+      </SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible

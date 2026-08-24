@@ -3,9 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
+import { NavMain, type NavMainItem } from "@/components/nav-main"
 import {
   Sidebar,
   SidebarContent,
@@ -13,64 +11,20 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { GalleryVerticalEndIcon, AudioLinesIcon, TerminalIcon, TerminalSquareIcon, BotIcon, BookOpenIcon, Settings2Icon, FrameIcon, PieChartIcon, MapIcon } from "lucide-react"
+import { ChartPieIcon, Grid3X3Icon, MapIcon, PieChartIcon, PuzzleIcon, Settings2Icon, SquareTextIcon, StarIcon, FrameIcon } from "lucide-react"
 
-// This is sample data.
+
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  // teams: [
-  //   {
-  //     name: "Acme Inc",
-  //     logo: (
-  //       <GalleryVerticalEndIcon />
-  //     ),
-  //     plan: "Enterprise",
-  //   },
-  //   {
-  //     name: "Acme Corp.",
-  //     logo: (
-  //       <AudioLinesIcon
-  //       />
-  //     ),
-  //     plan: "Startup",
-  //   },
-  //   {
-  //     name: "Evil Corp.",
-  //     logo: (
-  //       <TerminalIcon
-  //       />
-  //     ),
-  //     plan: "Free",
-  //   },
-  // ],
-  navMain: [
+  uiElements: [
     {
       title: "Charts",
       url: "#",
-      icon: (
-        <Image 
-          src="/chart-icon.svg"
-          alt="Chart"
-          width={18}
-          height={18}
-        />
-      )
+      icon: <ChartPieIcon className="text-sidebar-foreground" />
     },
     {
       title: "Components",
       url: "#",
-      icon: (
-        <Image 
-          src="/comp-icon.svg"
-          alt="Components"
-          width={18}
-          height={18}
-        />
-      ),
+      icon: <PuzzleIcon className="text-sidebar-foreground" />,
       isActive: true,
       items: [
         {
@@ -90,29 +44,15 @@ const data = {
     {
       title: "Data Grid",
       url: "#",
-      icon: (
-        <Image 
-          src="/grid-icon.svg"
-          alt="Data Grid" 
-          width={18}
-          height={18}
-        />
-      )
+      icon: <Grid3X3Icon className="text-sidebar-foreground" />
     },
     {
       title: "Forms",
       url: "#",
-      icon: (
-        <Image
-          src="/form-icon.svg"
-          alt="Forms"
-          width={18}
-          height={18}
-        />
-      ),
+      icon: <SquareTextIcon className="text-sidebar-foreground" />,
       items: [
         {
-          title: "Genesis", 
+          title: "Genesis",
           url: "#",
         },
         {
@@ -128,14 +68,7 @@ const data = {
     {
       title: "Icons",
       url: "#",
-      icon: (
-        <Image
-          src="/icon-icon.svg"
-          alt="Icons"
-          width={18}
-          height={18}
-        />
-      ),
+      icon: <StarIcon className="text-sidebar-foreground" />,
       items: [
         {
           title: "Introduction",
@@ -181,34 +114,31 @@ const data = {
         },
       ],
     },
-  ],
-  projects: [
+  ] satisfies NavMainItem[],
+  extras: [
     {
-      name: "Design Engineering",
+      title: "Maps",
       url: "#",
-      icon: (
-        <FrameIcon
-        />
-      ),
+      icon: <MapIcon className="text-sidebar-foreground" />,
+      items: [
+        { title: "Overview", url: "#" },
+        { title: "Locations", url: "#" },
+      ],
     },
+  ] satisfies NavMainItem[],
+  plugins: [
     {
-      name: "Sales & Marketing",
+      title: "Plugin Store",
       url: "#",
-      icon: (
-        <PieChartIcon
-        />
-      ),
+      icon: <PuzzleIcon className="text-sidebar-foreground" />,
+      items: [
+        { title: "Installed", url: "#" },
+        { title: "Discover", url: "#" },
+      ],
     },
-    {
-      name: "Travel",
-      url: "#",
-      icon: (
-        <MapIcon
-        />
-      ),
-    },
-  ],
+  ] satisfies NavMainItem[],
 }
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -221,15 +151,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             className="h-8 w-auto"
             width={128}
             height={32}
-          /> 
+          />
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain label="UI ELEMENTS" items={data.uiElements} />
+        <NavMain label="EXTRAS" items={data.extras} />
+        <NavMain label="PLUGINS" items={data.plugins} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {/* footer content can be added here if needed */}
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
