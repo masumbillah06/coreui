@@ -1,5 +1,10 @@
-export const header = () => {
+function header() {
   return (
-    <div className="h-4 bg-amber-300">header</div>
+    <div className="w-full border-b">
+      <div>Header Placeholder</div>
+    </div>
+    
   )
 }
+
+export default header

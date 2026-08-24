@@ -11,10 +11,17 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { ChartPieIcon, Grid3X3Icon, MapIcon, PieChartIcon, PuzzleIcon, Settings2Icon, SquareTextIcon, StarIcon, FrameIcon } from "lucide-react"
+import { ChartPieIcon, Grid3X3Icon, MapIcon, PieChartIcon, PuzzleIcon, Settings2Icon, SquareTextIcon, StarIcon, GaugeIcon } from "lucide-react"
 
 
 const data = {
+  dashboard: [
+    {
+      title: "Dashboard",
+      url: "#",
+      icon: <GaugeIcon className="text-sidebar-foreground" />
+    },
+  ] satisfies NavMainItem[],
   uiElements: [
     {
       title: "Charts",
@@ -144,7 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <div className="flex h-16 items-center px-3">
+        <div className="flex h-10 items-center px-3">
           <Image
             src="/coreui-logo.svg"
             alt="CoreUI"
@@ -155,6 +162,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </div>
       </SidebarHeader>
       <SidebarContent>
+        <NavMain label="DASHBOARD" showLabel={false} items={data.dashboard} />
         <NavMain label="UI ELEMENTS" items={data.uiElements} />
         <NavMain label="EXTRAS" items={data.extras} />
         <NavMain label="PLUGINS" items={data.plugins} />
