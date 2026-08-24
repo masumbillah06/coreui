@@ -151,11 +151,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <div className="flex h-10 items-center px-3">
+        <div className="flex h-10 items-center px-3 mt-2 border-b border-sidebar-border">
           <Image
             src="/coreui-logo.svg"
             alt="CoreUI"
-            className="h-8 w-auto"
+            className="h-7.5 w-auto mb-3"
             width={128}
             height={32}
           />
