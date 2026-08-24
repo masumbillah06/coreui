@@ -1,6 +1,7 @@
 import { SearchBar } from "@/components/ui/ui-searchbar/header-searchbar"
 import { SidebarTrigger } from "@/components/ui/ui-sidebar/sidebar"
 import { Bell, Languages, List, MailOpen, Sun } from "lucide-react"
+import Image from "next/image"
 
 function Header() {
   return (
@@ -22,8 +23,7 @@ function Header() {
         <Sun className="h-5 w-5" />
         <p>|</p>
         <div>
-          <img src="/avatar.jpg" alt="Avatar" className="h-12 w-12 rounded-full" />
-          
+          <Image src="/avatar.jpg" alt="Avatar" width={48} height={48} className="rounded-full" />
         </div>
       </div>
     </div>
