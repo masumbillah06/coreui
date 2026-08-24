@@ -1,4 +1,4 @@
-function footer() {
+function Footer() {
   return (
     <div className="w-full border-t py-2">
       <div className="px-6 flex items-center justify-between gap-2 text-sm">
@@ -12,4 +12,4 @@ function footer() {
     </div>
   )
 }
-export default footer
+export default Footer

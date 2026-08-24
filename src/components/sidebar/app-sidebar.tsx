@@ -3,14 +3,14 @@
 import * as React from "react"
 import Image from "next/image"
 
-import { NavMain, type NavMainItem } from "@/components/nav-main"
+import { NavMain, type NavMainItem } from "@/components/sidebar/nav-main"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/ui-sidebar/sidebar"
 import { ChartPieIcon, Grid3X3Icon, MapIcon, PieChartIcon, PuzzleIcon, Settings2Icon, SquareTextIcon, StarIcon, GaugeIcon } from "lucide-react"
 
 

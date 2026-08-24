@@ -1,6 +1,6 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import header from "@/components/layout/header"
-import footer from "@/components/layout/footer"
+import { AppSidebar } from "@/components/sidebar/app-sidebar"
+import Header from "@/components/layout/header"
+import Footer from "@/components/layout/footer"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,23 +8,21 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/ui-sidebar/breadcrumb"
+import { Separator } from "@/components/ui/ui-sidebar/separator"
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/ui-sidebar/sidebar"
 
 export default function Page() {
   return (
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        {header()}
-        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+        <Header />
+        <header className="flex h-12 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
             <Separator
               orientation="vertical"
               className="mr-2 data-vertical:h-4 data-vertical:self-auto"
@@ -52,7 +50,7 @@ export default function Page() {
           </div>
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
         </div>
-        {footer()}
+        <Footer />
       </SidebarInset>
     </SidebarProvider>
   )
