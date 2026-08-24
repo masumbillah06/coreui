@@ -79,10 +79,10 @@ export function SearchBar({
       />
 
       <div className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
-        <kbd className="rounded border border-gray-300 bg-gray-100 px-1.5 py-0.5 font-sans">
+        <kbd className="rounded border border-gray-300 bg-gray-100 px-1 py-0.5 font-sans">
           Ctrl
         </kbd>
-        <kbd className="rounded border border-gray-300 bg-gray-100 px-1.5 py-0.5 font-sans">
+        <kbd className="rounded border border-gray-300 bg-gray-100 px-2.5 py-0.5 font-sans">
           /
         </kbd>
       </div>
