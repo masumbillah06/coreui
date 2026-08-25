@@ -11,7 +11,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/ui-sidebar/sidebar"
-import { ChartPieIcon, Grid3X3Icon, MapIcon, PieChartIcon, PuzzleIcon, Settings2Icon, SquareTextIcon, StarIcon, GaugeIcon } from "lucide-react"
+import { ChartPieIcon, Grid3X3Icon, MapIcon, PuzzleIcon, CalendarDays, SquareTextIcon, StarIcon, GaugeIcon, Calculator, LockIcon, BugIcon, LogsIcon, MailOpen, FileTextIcon } from "lucide-react"
 
 
 const data = {
@@ -19,14 +19,18 @@ const data = {
     {
       title: "Dashboard",
       url: "#",
-      icon: <GaugeIcon className="text-sidebar-foreground" />
+      icon: <GaugeIcon className="text-sidebar-foreground" />,
+      badge: {
+        label: "NEW",
+        className: "bg-blue-500",
+      },
     },
   ] satisfies NavMainItem[],
   uiElements: [
     {
       title: "Charts",
       url: "#",
-      icon: <ChartPieIcon className="text-sidebar-foreground" />
+      icon: <ChartPieIcon className="text-sidebar-foreground" />,
     },
     {
       title: "Components",
@@ -35,23 +39,130 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Accordion",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Alert",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Badge",
           url: "#",
+        },
+        {
+          title: "Breadcrumb",
+          url: "#",
+        },
+        {
+          title: "Buttons",
+          url: "#",
+        },
+        {
+          title: "Buttons Group",
+          url: "#",
+        },
+        {
+          title: "Calendar",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Cards",
+          url: "#",
+        },
+        {
+          title: "Carousel",
+          url: "#",
+        },
+        {
+          title: "Chip",
+          url: "#",
+        },
+        {
+          title: "Chip set",
+          url: "#",
+        },
+        {
+          title: "Collapse",
+          url: "#",
+        },
+        {
+          title: "Dropdowns",
+          url: "#",
+        },
+        {
+          title: "List Group",
+          url: "#",
+        },
+        {
+          title: "Loading Buttons",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Modals",
+          url: "#",
+        },
+        {
+          title: "Nav & Tabs",
+          url: "#",
+        },
+        {
+          title: "Pagination",
+          url: "#",
+        },
+        {
+          title: "Placeholders",
+          url: "#",
+        },
+        {
+          title: "Popovers",
+          url: "#",
+        },
+        {
+          title: "Progress",
+          url: "#",
+        },
+        {
+          title: "Search Button",
+          url: "#",
+        },
+        {
+          title: "Spinners",
+          url: "#",
+        },
+        {
+          title: "Tables",
+          url: "#",
+        },
+        {
+          title: "Tabs",
+          url: "#",
+        },
+        {
+          title: "Toasts",
+          url: "#",
+        },
+        {
+          title: "Tooltips",
+          url: "#",
+        },
+        {
+          title: "Virtual Scroller",
+          url: "#",
+          isPro: true,
         },
       ],
     },
     {
       title: "Data Grid",
       url: "#",
-      icon: <Grid3X3Icon className="text-sidebar-foreground" />
+      icon: <Grid3X3Icon className="text-sidebar-foreground" />,
+      badge: {
+        label: "ADD-ON",
+        className: "bg-yellow-500",
+      },
     },
     {
       title: "Forms",
@@ -59,15 +170,89 @@ const data = {
       icon: <SquareTextIcon className="text-sidebar-foreground" />,
       items: [
         {
-          title: "Genesis",
+          title: "Autocomplete",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Checks & Radios",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Chip Input",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Date Picker",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Date Range Picker",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Floating Labels",
+          url: "#",
+        },
+        {
+          title: "Form Control",
+          url: "#",
+        },
+        {
+          title: "Input Group",
+          url: "#",
+        },
+        {
+          title: "Multi Select",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "OTP Input",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Password Input",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Range",
+          url: "#",
+        },
+        {
+          title: "Range Slider",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Rating",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Select",
+          url: "#",
+        },
+        {
+          title: "Stepper",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Time Picker",
+          url: "#",
+          isPro: true,
+        },
+        {
+          title: "Layout",
+          url: "#",
+        },
+        {
+          title: "Validation",
           url: "#",
         },
       ],
@@ -78,55 +263,70 @@ const data = {
       icon: <StarIcon className="text-sidebar-foreground" />,
       items: [
         {
-          title: "Introduction",
+          title: "CoreUI Free",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "CoreUI Flags",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "CoreUI Brands",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Scheduler",
       url: "#",
       icon: (
-        <Settings2Icon
+        <CalendarDays className="text-sidebar-foreground"
         />
       ),
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      badge: {
+        label: "ADD-ON",
+        className: "bg-yellow-500",
+      },
+    },
+    {
+      title: "Smart Table",
+      url: "#",
+      icon: (
+        <Grid3X3Icon className="text-sidebar-foreground"
+        />
+      ),
+      badge: {
+        label: "PRO",
+        className: "bg-red-500",
+      },
+    },
+    {
+      title: "Widgets",
+      url: "#",
+      icon: (
+        <Calculator className="text-sidebar-foreground"
+        />
+      ),
+      badge: {
+        label: "NEW",
+        className: "bg-blue-500",
+      },
     },
   ] satisfies NavMainItem[],
   extras: [
     {
-      title: "Maps",
+      title: "Authentication",
       url: "#",
-      icon: <MapIcon className="text-sidebar-foreground" />,
+      icon: <LockIcon className="text-sidebar-foreground" />,
+      items: [
+        { title: "Overview", url: "#" },
+        { title: "Locations", url: "#" },
+      ],
+    },
+    {
+      title: "Error Pages",
+      url: "#",
+      icon: <BugIcon className="text-sidebar-foreground" />,
       items: [
         { title: "Overview", url: "#" },
         { title: "Locations", url: "#" },
@@ -135,17 +335,65 @@ const data = {
   ] satisfies NavMainItem[],
   plugins: [
     {
-      title: "Plugin Store",
+      title: "Calendar",
       url: "#",
-      icon: <PuzzleIcon className="text-sidebar-foreground" />,
+      icon: (
+        <CalendarDays className="text-sidebar-foreground"
+        />
+      ),
+      badge: {
+        label: "PRO",
+        className: "bg-red-500",
+      },
+    },
+    {
+      title: "Google Maps",
+      url: "#",
+      icon: (
+        <MapIcon className="text-sidebar-foreground"
+        />
+      ),
+      badge: {
+        label: "PRO",
+        className: "bg-red-500",
+      },
+    }
+  ] satisfies NavMainItem[],
+  apps: [
+    {
+      title: "Invoices",
+      url: "#",
+      icon: (
+        <LogsIcon className="text-sidebar-foreground"
+        />
+      ),
       items: [
-        { title: "Installed", url: "#" },
-        { title: "Discover", url: "#" },
+        { title: "Invoice", url: "#", isPro: true },
       ],
     },
+    {
+      title: "Email",
+      url: "#",
+      icon: (
+        <MailOpen className="text-sidebar-foreground"
+        />
+      ),
+      items: [
+        { title: "Inbox", url: "#", isPro: true },
+        { title: "Messages", url: "#", isPro: true },
+        { title: "Compose", url: "#", isPro: true },
+      ],
+    }, 
+    {
+      title: "Docs",
+      url: "#",
+      icon: (
+        <FileTextIcon className="text-sidebar-foreground"
+        />
+      )
+    }
   ] satisfies NavMainItem[],
 }
-
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -166,6 +414,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain label="UI ELEMENTS" items={data.uiElements} />
         <NavMain label="EXTRAS" items={data.extras} />
         <NavMain label="PLUGINS" items={data.plugins} />
+        <NavMain label="APPS" items={data.apps} />
       </SidebarContent>
       <SidebarFooter>
         {/* footer content can be added here if needed */}

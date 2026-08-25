@@ -22,9 +22,14 @@ export type NavMainItem = {
   url: string
   icon?: React.ReactNode
   isActive?: boolean
+  badge?: {
+    label: string
+    className: string
+  }
   items?: {
     title: string
     url: string
+    isPro?: boolean
   }[]
 }
 
@@ -44,7 +49,7 @@ export function NavMain({
           <span className="font-roboto font-extrabold">{label}</span>
         </SidebarGroupLabel>
       )}
-      <SidebarMenu>
+      <SidebarMenu className="gap-1">
         {items.map((item) => (
           item.items?.length ? (
             <Collapsible
@@ -54,18 +59,23 @@ export function NavMain({
               render={<SidebarMenuItem />}
             >
               <CollapsibleTrigger
-                render={<SidebarMenuButton tooltip={item.title} />} 
+                render={<SidebarMenuButton className="h-9 text-[15px]" tooltip={item.title} />} 
               >
                 {item.icon}
                 <span>{item.title}</span>
                 <ChevronRightIcon className="ml-auto transition-transform duration-200 group-data-open/collapsible:rotate-90" />
               </CollapsibleTrigger>
               <CollapsibleContent>
-                <SidebarMenuSub>
+                <SidebarMenuSub className="gap-2">
                   {item.items.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton render={<a href={subItem.url} />}>
+                      <SidebarMenuSubButton className="h-8 text-[15px]" render={<a href={subItem.url} />}>
                         <span>{subItem.title}</span>
+                        {subItem.isPro && (
+                          <span className="ml-auto text-[9px] font-semibold text-white bg-red-500 px-1.5 py-0.5 rounded-sm">
+                            PRO
+                          </span>
+                        )}
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
@@ -75,12 +85,18 @@ export function NavMain({
           ) : (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton
+                className="h-9 text-[15px]"
                 isActive={item.isActive}
                 tooltip={item.title}
                 render={<a href={item.url} />}
               >
                 {item.icon}
-                <span>{item.title}</span>
+                <span className="min-w-0 flex-1 truncate">{item.title}</span>
+                {item.badge && (
+                  <span className={`text-[9px] font-semibold text-white px-1.5 py-0.5 rounded-sm ${item.badge.className}`}>
+                    {item.badge.label}
+                  </span>
+                )}
               </SidebarMenuButton>
             </SidebarMenuItem>
           )
@@ -89,3 +105,5 @@ export function NavMain({
     </SidebarGroup>
   )
 }
+
+
