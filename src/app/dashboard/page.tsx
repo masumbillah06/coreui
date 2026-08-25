@@ -44,8 +44,10 @@ export default function Page() {
           </div>
         </header>
           <div className="flex-1 border-t border-slate-300 bg-slate-100">
-            <div className="mx-auto w-full max-w-[1440px] px-4 py-4 sm:px-6 lg:px-10 xl:px-16">
-              <WidgetStatsA />
+            <div className="mx-auto w-full max-w-[1220px] px-4 py-4">
+              <div className="mb-4">
+                <WidgetStatsA />
+              </div>
             </div>
           </div>
         <Footer />  
