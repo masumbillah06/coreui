@@ -36,7 +36,7 @@ const data = {
       title: "Components",
       url: "#",
       icon: <PuzzleIcon className="text-sidebar-foreground" />,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "Accordion",

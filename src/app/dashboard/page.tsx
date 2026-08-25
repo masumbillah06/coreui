@@ -15,6 +15,7 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/ui-sidebar/sidebar"
+import { ChartAreaLegend } from "@/components/dashboard/TrafficsChart"
 
 export default function Page() {
   return (
@@ -48,6 +49,9 @@ export default function Page() {
               <div className="mb-4">
                 <WidgetStatsA />
               </div>
+              <div className="mb-4">
+                <ChartAreaLegend />
+              </div>
             </div>
           </div>
         <Footer />  
@@ -55,3 +59,5 @@ export default function Page() {
     </SidebarProvider>
   )
 }
+
+
