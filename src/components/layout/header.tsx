@@ -5,7 +5,7 @@ import Image from "next/image"
 
 function Header() {
   return (
-    <div className="h-15 w-full border-b px-6 flex items-center justify-between gap-2">
+    <div className="sticky top-0 z-20 flex h-15 w-full shrink-0 items-center justify-between gap-2 border-b bg-background px-6">
       <div className="flex items-center gap-2 text-sm">
         <div>
           <SidebarTrigger className="" />

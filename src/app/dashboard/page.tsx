@@ -43,7 +43,7 @@ export default function Page() {
             </Breadcrumb>
           </div>
         </header>
-          <div className="flex-1 border-t border-slate-300 bg-slate-100">
+          <div className="min-h-0 flex-1 overflow-y-auto border-t border-slate-300 bg-slate-100">
             <div className="mx-auto w-full max-w-[1220px] px-4 py-4">
               <div className="mb-4">
                 <WidgetStatsA />
