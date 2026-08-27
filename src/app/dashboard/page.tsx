@@ -2,6 +2,7 @@ import { AppSidebar } from "@/components/sidebar/app-sidebar"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import WidgetStatsA from "@/components/dashboard/WidgetsStatsA"
+import { WidgetStatsDSocial } from "@/components/dashboard/SocialHandle"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -51,6 +52,9 @@ export default function Page() {
               </div>
               <div className="mb-4">
                 <ChartAreaLegend />
+              </div>
+              <div>
+                <WidgetStatsDSocial />
               </div>
             </div>
           </div>
