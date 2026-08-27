@@ -46,7 +46,7 @@ export function NavMain({
     <SidebarGroup>
       {showLabel && (
         <SidebarGroupLabel>
-          <span className="font-roboto font-extrabold">{label}</span>
+          <span className="font-extrabold">{label}</span>
         </SidebarGroupLabel>
       )}
       <SidebarMenu className="gap-1">
@@ -59,7 +59,7 @@ export function NavMain({
               render={<SidebarMenuItem />}
             >
               <CollapsibleTrigger
-                render={<SidebarMenuButton className="h-9 text-[15px]" tooltip={item.title} />} 
+                render={<SidebarMenuButton className="h-9 text-[14px] text-sidebar-foreground/70" tooltip={item.title} />} 
               >
                 {item.icon}
                 <span>{item.title}</span>
@@ -69,7 +69,7 @@ export function NavMain({
                 <SidebarMenuSub className="gap-2">
                   {item.items.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton className="h-8 text-[15px]" render={<a href={subItem.url} />}>
+                      <SidebarMenuSubButton className="h-8 text-[14px] text-sidebar-foreground/70" render={<a href={subItem.url} />}>
                         <span>{subItem.title}</span>
                         {subItem.isPro && (
                           <span className="ml-auto text-[9px] font-semibold text-white bg-red-500 px-1.5 py-0.5 rounded-sm">
@@ -85,7 +85,7 @@ export function NavMain({
           ) : (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton
-                className="h-9 text-[15px]"
+                className="h-9 text-[14px] text-sidebar-foreground/70"
                 isActive={item.isActive}
                 tooltip={item.title}
                 render={<a href={item.url} />}

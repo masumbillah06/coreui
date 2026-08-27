@@ -17,6 +17,7 @@ import {
   SidebarProvider,
 } from "@/components/ui/ui-sidebar/sidebar"
 import { ChartAreaLegend } from "@/components/dashboard/TrafficsChart"
+import TrafficSalesCard from "@/components/dashboard/TrafficSalesCard"
 
 export default function Page() {
   return (
@@ -53,8 +54,11 @@ export default function Page() {
               <div className="mb-4">
                 <ChartAreaLegend />
               </div>
-              <div>
+              <div className="mb-4">
                 <WidgetStatsDSocial />
+              </div>
+              <div className="mb-4">
+                <TrafficSalesCard />
               </div>
             </div>
           </div>

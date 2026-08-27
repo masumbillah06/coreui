@@ -19,7 +19,7 @@ const data = {
     {
       title: "Dashboard",
       url: "/dashboard",
-      icon: <GaugeIcon className="text-sidebar-foreground" />,
+      icon: <GaugeIcon className="text-sidebar-foreground/70" />,
       badge: {
         label: "NEW",
         className: "bg-blue-500",
@@ -30,12 +30,12 @@ const data = {
     {
       title: "Charts",
       url: "/charts",
-      icon: <ChartPieIcon className="text-sidebar-foreground" />,
+      icon: <ChartPieIcon className="text-sidebar-foreground/70" />,
     },
     {
       title: "Components",
       url: "#",
-      icon: <PuzzleIcon className="text-sidebar-foreground" />,
+      icon: <PuzzleIcon className="text-sidebar-foreground/70" />,
       isActive: false,
       items: [
         {
@@ -158,7 +158,7 @@ const data = {
     {
       title: "Data Grid",
       url: "#",
-      icon: <Grid3X3Icon className="text-sidebar-foreground" />,
+      icon: <Grid3X3Icon className="text-sidebar-foreground/70" />,
       badge: {
         label: "ADD-ON",
         className: "bg-yellow-500",
@@ -167,7 +167,7 @@ const data = {
     {
       title: "Forms",
       url: "#",
-      icon: <SquareTextIcon className="text-sidebar-foreground" />,
+      icon: <SquareTextIcon className="text-sidebar-foreground/70" />,
       items: [
         {
           title: "Autocomplete",
@@ -260,7 +260,7 @@ const data = {
     {
       title: "Icons",
       url: "#",
-      icon: <StarIcon className="text-sidebar-foreground" />,
+      icon: <StarIcon className="text-sidebar-foreground/70" />,
       items: [
         {
           title: "CoreUI Free",
@@ -280,7 +280,7 @@ const data = {
       title: "Scheduler",
       url: "#",
       icon: (
-        <CalendarDays className="text-sidebar-foreground"
+        <CalendarDays className="text-sidebar-foreground/70"
         />
       ),
       badge: {
@@ -292,7 +292,7 @@ const data = {
       title: "Smart Table",
       url: "#",
       icon: (
-        <Grid3X3Icon className="text-sidebar-foreground"
+        <Grid3X3Icon className="text-sidebar-foreground/70"
         />
       ),
       badge: {
@@ -304,7 +304,7 @@ const data = {
       title: "Widgets",
       url: "#",
       icon: (
-        <Calculator className="text-sidebar-foreground"
+        <Calculator className="text-sidebar-foreground/70"
         />
       ),
       badge: {
@@ -317,7 +317,7 @@ const data = {
     {
       title: "Authentication",
       url: "#",
-      icon: <LockIcon className="text-sidebar-foreground" />,
+      icon: <LockIcon className="text-sidebar-foreground/70" />,
       items: [
         { title: "Overview", url: "#" },
         { title: "Locations", url: "#" },
@@ -326,7 +326,7 @@ const data = {
     {
       title: "Error Pages",
       url: "#",
-      icon: <BugIcon className="text-sidebar-foreground" />,
+      icon: <BugIcon className="text-sidebar-foreground/70" />,
       items: [
         { title: "Overview", url: "#" },
         { title: "Locations", url: "#" },
@@ -338,7 +338,7 @@ const data = {
       title: "Calendar",
       url: "#",
       icon: (
-        <CalendarDays className="text-sidebar-foreground"
+        <CalendarDays className="text-sidebar-foreground/70"
         />
       ),
       badge: {
@@ -350,7 +350,7 @@ const data = {
       title: "Google Maps",
       url: "#",
       icon: (
-        <MapIcon className="text-sidebar-foreground"
+        <MapIcon className="text-sidebar-foreground/70"
         />
       ),
       badge: {
@@ -364,7 +364,7 @@ const data = {
       title: "Invoices",
       url: "#",
       icon: (
-        <LogsIcon className="text-sidebar-foreground"
+        <LogsIcon className="text-sidebar-foreground/70"
         />
       ),
       items: [
@@ -375,7 +375,7 @@ const data = {
       title: "Email",
       url: "#",
       icon: (
-        <MailOpen className="text-sidebar-foreground"
+        <MailOpen className="text-sidebar-foreground/70"
         />
       ),
       items: [
@@ -388,7 +388,7 @@ const data = {
       title: "Docs",
       url: "#",
       icon: (
-        <FileTextIcon className="text-sidebar-foreground"
+        <FileTextIcon className="text-sidebar-foreground/70"
         />
       )
     }
@@ -403,7 +403,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <Image
             src="/coreui-logo.svg"
             alt="CoreUI"
-            className="h-7.5 w-auto mb-3"
+            className="h-7.5 w-auto mb-3 opacity-70 grayscale"
             width={128}
             height={32}
           />
