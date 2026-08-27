@@ -157,7 +157,7 @@ const data = {
     },
     {
       title: "Data Grid",
-      url: "/dataGrid",
+      url: "/data-grid",
       icon: <Grid3X3Icon className="text-sidebar-foreground/70" />,
       badge: {
         label: "ADD-ON",
@@ -290,7 +290,7 @@ const data = {
     },
     {
       title: "Smart Table",
-      url: "#",
+      url: "/smart-table",
       icon: (
         <Grid3X3Icon className="text-sidebar-foreground/70"
         />

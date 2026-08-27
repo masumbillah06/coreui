@@ -14,6 +14,13 @@ import {
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBannerAddOn from "@/components/ui/banners/add-on-banner"
 import DataGridOne from "@/components/preview/previewAndCode/data-grid-1"
+import ComponentPreview from "@/components/preview/ComponentPreview"
+
+const dataGridCode = `import DataGridOne from "@/components/preview/previewAndCode/data-grid-1"
+
+export default function DataGridPreview() {
+  return <DataGridOne />
+}`
 
 export default function Page() {
   return (
@@ -45,7 +52,18 @@ export default function Page() {
               <div className="mb-4">
                 <CoreUIBannerAddOn />
               </div>
-              <DataGridOne />
+              <div className="mb-4">
+                <div className="mb-5">
+                  <ComponentPreview
+                    title="Data Grid"
+                    detail="Search, filter, sort, select, export, and paginate employee records."
+                    code={dataGridCode}
+                    language="tsx"
+                  >
+                    <DataGridOne />
+                  </ComponentPreview>
+                </div>
+              </div>
             </div>
           </div>
         <Footer />  

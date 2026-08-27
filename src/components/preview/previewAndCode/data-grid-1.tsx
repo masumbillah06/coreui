@@ -151,10 +151,6 @@ export default function DataGridOne() {
 	return (
 		<div className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
 			<div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 p-3">
-				<label className="relative min-w-56 flex-1 sm:max-w-sm">
-					<Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
-					<input value={search} onChange={(event) => { setSearch(event.target.value); setPage(1); }} placeholder="Search employees..." className="w-full rounded-md border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
-				</label>
 				<div className="flex items-center gap-2">
 					<button type="button" onClick={exportCsv} className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"><Download className="size-4" /> Export</button>
 					<details className="relative">
@@ -164,10 +160,14 @@ export default function DataGridOne() {
 						</div>
 					</details>
 				</div>
+				<label className="relative min-w-56 flex-1 sm:max-w-sm">
+					<Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+					<input value={search} onChange={(event) => { setSearch(event.target.value); setPage(1); }} placeholder="Search employees..." className="w-full rounded-md border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+				</label>
 			</div>
-			<div className="overflow-x-auto">
+			<div className="max-h-[560px] overflow-auto">
 				<table className="w-full min-w-[1100px] border-collapse text-left text-sm">
-					<thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+					<thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
 						<tr>
 							<th className="w-10 px-3 py-3"><input type="checkbox" aria-label="Select visible rows" checked={visibleItems.length > 0 && visibleItems.every((item) => selected.has(item.id))} onChange={toggleAllVisible} /></th>
 							{displayedColumns.map((column) => <th key={column.key} className={`${column.width} px-3 py-3`}><button type="button" onClick={() => toggleSort(column.key)} className="whitespace-nowrap font-semibold hover:text-slate-900">{column.label}{sort?.key === column.key ? (sort.direction === "asc" ? " ↑" : " ↓") : ""}</button>{column.filter && <select aria-label={`Filter ${column.label}`} value={filters[column.key] ?? ""} onChange={(event) => { setFilters((current) => ({ ...current, [column.key]: event.target.value })); setPage(1); }} className="mt-2 block w-full rounded border border-slate-200 bg-white px-1 py-1 text-xs font-normal normal-case tracking-normal text-slate-600"><option value="">All</option>{getUniqueValues(column.key).map((value) => <option key={value} value={value}>{column.key === "salary" ? currency(Number(value)) : value}</option>)}</select>}</th>)}
