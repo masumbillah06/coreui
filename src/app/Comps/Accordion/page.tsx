@@ -74,6 +74,47 @@ export default function Accordion({ items = defaultItems }: { items?: AccordionI
   );
 }`
 
+const accordionAlwaysCode = `"use client";
+
+import { useState, type ReactNode } from "react";
+import { ChevronDown } from "lucide-react";
+
+type AccordionItemData = {
+  title: string;
+  content: ReactNode;
+};
+
+export default function Accordion({ items }: { items: AccordionItemData[] }) {
+  const [openIndices, setOpenIndices] = useState<Set<number>>(
+    () => new Set([0]),
+  );
+
+  const toggleItem = (index: number) => {
+    setOpenIndices((current) => {
+      const next = new Set(current);
+      next.has(index) ? next.delete(index) : next.add(index);
+      return next;
+    });
+  };
+
+  return (
+    <div>
+      {items.map((item, index) => {
+        const isOpen = openIndices.has(index);
+        return (
+          <div key={item.title}>
+            <button type="button" onClick={() => toggleItem(index)}>
+              <span>{item.title}</span>
+              <ChevronDown className={isOpen ? "rotate-180" : ""} />
+            </button>
+            {isOpen && <div>{item.content}</div>}
+          </div>
+        );
+      })}
+    </div>
+  );
+}`
+
 export default function Page() {
   return (
     <SidebarProvider>
@@ -121,7 +162,7 @@ export default function Page() {
                 </ComponentPreview>
               </div>
               <div className="mb-5">
-                <ComponentPreview title="React Accordion always opne" detail="Click the accordions below to expand/collapse the accordion content." code={accordionCode} language="tsx">
+                <ComponentPreview title="React Accordion always open" detail="Click the accordions below to expand/collapse the accordion content." code={accordionAlwaysCode} language="tsx">
                   <AccordionAlways />
                 </ComponentPreview>
               </div>

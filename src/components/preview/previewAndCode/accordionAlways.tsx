@@ -28,13 +28,28 @@ export default function Accordion({
 }: {
   items?: AccordionItemData[];
 }) {
-  // Always keep one accordion item open
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndices, setOpenIndices] = useState<Set<number>>(
+    () => new Set([0]),
+  );
+
+  const toggleItem = (index: number) => {
+    setOpenIndices((current) => {
+      const next = new Set(current);
+
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+
+      return next;
+    });
+  };
 
   return (
     <div className="w-full overflow-hidden rounded-lg border border-gray-200 bg-white">
       {items.map((item, index) => {
-        const isOpen = openIndex === index;
+        const isOpen = openIndices.has(index);
 
         return (
           <div
@@ -43,7 +58,7 @@ export default function Accordion({
           >
             <button
               type="button"
-              onClick={() => setOpenIndex(index)}
+              onClick={() => toggleItem(index)}
               className={`flex w-full items-center justify-between px-4 py-3.5 text-left text-sm text-gray-700 transition-colors ${
                 isOpen
                   ? "border border-violet-500 bg-violet-300 shadow-md"

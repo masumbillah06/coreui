@@ -52,7 +52,7 @@ const data = {
         },
         {
           title: "Breadcrumb",
-          url: "#",
+          url: "/Comps/BreadCrumbs",
         },
         {
           title: "Buttons",

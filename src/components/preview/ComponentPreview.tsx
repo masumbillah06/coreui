@@ -87,7 +87,8 @@ export default function ComponentPreview({
           </div>
         </div>
       ) : (
-        <div className="relative border-t border-gray-200 bg-sidebar-accent rounded-lg mx-3">
+        // Code Panel
+        <div className="relative border-t border-gray-200 bg-sidebar-accent rounded-lg mx-3 mb-3">
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
             <span className="text-xs font-medium uppercase tracking-wide text-gray-400">
               {language}
