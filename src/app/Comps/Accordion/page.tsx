@@ -15,6 +15,64 @@ import {
   SidebarProvider,
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
+import ComponentPreview from "@/components/preview/ComponentPreview"
+import Accordion from "@/components/preview/previewAndCode/accordion"
+import AccordionAlways from "@/components/preview/previewAndCode/accordionAlways"
+
+const accordionCode = `"use client";
+
+import { useState, type ReactNode } from "react";
+import { ChevronDown } from "lucide-react";
+
+type AccordionItemData = {
+  title: string;
+  content: ReactNode;
+};
+
+const defaultItems: AccordionItemData[] = [
+  { title: "Accordion Item #1", content: "Content for the first item goes here." },
+  { title: "Accordion Item #2", content: "Content for the second item goes here." },
+  { title: "Accordion Item #3", content: "Content for the third item goes here." },
+];
+
+export default function Accordion({ items = defaultItems }: { items?: AccordionItemData[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <div className="w-full overflow-hidden rounded-lg border border-gray-200 bg-white">
+      {items.map((item, index) => {
+        const isOpen = openIndex === index;
+        return (
+          <div
+            key={item.title}
+            className={index !== 0 ? "border-t border-gray-200" : ""}
+          >
+            <button
+              type="button"
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+              className={\`flex w-full items-center justify-between px-4 py-3.5 text-left text-sm text-gray-700 \${
+                isOpen
+                  ? "border border-violet-500 bg-violet-400 shadow-md hover:bg-violet-400"
+                  : "hover:bg-gray-50"
+              }\`}
+            >
+              <span>{item.title}</span>
+              <ChevronDown
+                size={18}
+                className={
+                  isOpen ? "rotate-180 text-gray-400 transition-transform duration-200" : "text-gray-400 transition-transform duration-200"
+                }
+              />
+            </button>
+            {isOpen && (
+              <div className="px-4 pb-4 text-sm text-gray-500">{item.content}</div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}`
 
 export default function Page() {
   return (
@@ -48,9 +106,24 @@ export default function Page() {
           </div>
         </header>
           <div className="min-h-0 flex-1 overflow-y-auto border-t border-slate-300 bg-slate-100">
-            <div className="mx-auto w-full max-w-[1220px] px-4 py-4">
-              <div className="mb-4">
+            <div className="mx-auto w-full max-w-305 px-4 py-4">
+              <div className="mb-5">
                 <CoreUIBanner />
+              </div>
+              <div className="mb-5">
+                <ComponentPreview title="React Accordion" detail="Click the accordions below to expand/collapse the accordion content." code={accordionCode} language="tsx">
+                  <Accordion />
+                </ComponentPreview>
+              </div>
+              <div className="mb-5">
+                <ComponentPreview title="React Accordion Flush" detail="Click the accordions below to expand/collapse the accordion content." code={accordionCode} language="tsx">
+                  <Accordion />
+                </ComponentPreview>
+              </div>
+              <div className="mb-5">
+                <ComponentPreview title="React Accordion always opne" detail="Click the accordions below to expand/collapse the accordion content." code={accordionCode} language="tsx">
+                  <AccordionAlways />
+                </ComponentPreview>
               </div>
             </div>
           </div>
