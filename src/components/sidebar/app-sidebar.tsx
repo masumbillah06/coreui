@@ -18,7 +18,7 @@ const data = {
   dashboard: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: <GaugeIcon className="text-sidebar-foreground" />,
       badge: {
         label: "NEW",
@@ -29,7 +29,7 @@ const data = {
   uiElements: [
     {
       title: "Charts",
-      url: "#",
+      url: "/charts",
       icon: <ChartPieIcon className="text-sidebar-foreground" />,
     },
     {
