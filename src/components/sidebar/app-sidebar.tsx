@@ -40,11 +40,11 @@ const data = {
       items: [
         {
           title: "Accordion",
-          url: "#",
+          url: "/Comps/Accordion",
         },
         {
           title: "Alert",
-          url: "#",
+          url: "/Comps/Alert",
         },
         {
           title: "Badge",
