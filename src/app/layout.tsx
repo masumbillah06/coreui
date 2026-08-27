@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter, Roboto, } from "next/font/google";
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
+import { SidebarProvider } from "@/components/ui/ui-sidebar/sidebar";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,7 +37,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${roboto.variable} h-full antialiased`}
     >
       <body className="flex h-full min-h-0 flex-col overflow-hidden">
-        {children}
+        <SidebarProvider>
+          <AppSidebar />
+          {children}
+        </SidebarProvider>
       </body>
     </html>
   );

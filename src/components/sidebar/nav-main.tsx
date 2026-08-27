@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   Collapsible,
   CollapsibleContent,
@@ -69,7 +70,7 @@ export function NavMain({
                 <SidebarMenuSub className="gap-2">
                   {item.items.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton className="h-8 text-[14px] text-sidebar-foreground/70" render={<a href={subItem.url} />}>
+                      <SidebarMenuSubButton className="h-8 text-[14px] text-sidebar-foreground/70" render={<Link href={subItem.url} />}>
                         <span>{subItem.title}</span>
                         {subItem.isPro && (
                           <span className="ml-auto text-[9px] font-semibold text-white bg-red-500 px-1.5 py-0.5 rounded-sm">
@@ -88,7 +89,7 @@ export function NavMain({
                 className="h-9 text-[14px] text-sidebar-foreground/70"
                 isActive={item.isActive}
                 tooltip={item.title}
-                render={<a href={item.url} />}
+                render={<Link href={item.url} />}
               >
                 {item.icon}
                 <span className="min-w-0 flex-1 truncate">{item.title}</span>

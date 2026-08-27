@@ -12,12 +12,8 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import {
   SidebarInset,
 } from "@/components/ui/ui-sidebar/sidebar"
-import { ChartLineExample } from "@/components/charts/linechart"
-import { ChartBarExample } from "@/components/charts/barchart"
-import { ChartDoughnutAndPieExample } from "@/components/charts/donutchart"
-import { ChartPieExample } from "@/components/charts/piechart"
-import { ChartRadarExample } from "@/components/charts/radarchart"
-import { ChartPolarAreaExample } from "@/components/charts/polarchart"
+import CoreUIBannerAddOn from "@/components/ui/banners/add-on-banner"
+import DataGridOne from "@/components/preview/previewAndCode/data-grid-1"
 
 export default function Page() {
   return (
@@ -38,7 +34,7 @@ export default function Page() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Charts</BreadcrumbPage>
+                  <BreadcrumbPage>Data Grid</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -46,18 +42,10 @@ export default function Page() {
         </header>
           <div className="min-h-0 flex-1 overflow-y-auto border-t border-slate-300 bg-slate-100">
             <div className="mx-auto w-full max-w-[1220px] px-4 py-4">
-              <div className="mb-4 grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="min-w-0 overflow-hidden"><ChartBarExample /></div>
-                <div className="min-w-0 overflow-hidden"><ChartLineExample /></div>
+              <div className="mb-4">
+                <CoreUIBannerAddOn />
               </div>
-              <div className="mb-4 grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="min-w-0 overflow-hidden"><ChartDoughnutAndPieExample /></div>
-                <div className="min-w-0 overflow-hidden"><ChartPieExample /></div>
-              </div>
-              <div className="mb-4 grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="min-w-0 overflow-hidden"><ChartPolarAreaExample /></div>
-                <div className="min-w-0 overflow-hidden"><ChartRadarExample /></div>
-              </div>
+              <DataGridOne />
             </div>
           </div>
         <Footer />  

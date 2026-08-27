@@ -10,10 +10,9 @@ import {
   KeyRound,
   Landmark,
 } from "lucide-react";
+import { FaGoogle, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { OpenAI } from "@lobehub/icons";
 
-/* ------------------------------------------------------------------ */
-/* Mock data                                                           */
-/* ------------------------------------------------------------------ */
 
 const stats = [
   { label: "New Clients", value: "9,123", color: "border-blue-500" },
@@ -40,8 +39,8 @@ const gender = [
 const sources = [
   { label: "Organic Search", value: 191235, pct: 56, icon: "google" },
   { label: "ChatGPT", value: 51223, pct: 15, icon: "chatgpt" },
-  { label: "Twitter", value: 37564, pct: 11, icon: "x" },
-  { label: "LinkedIn", value: 27319, pct: 8, icon: "linkedin" },
+  { label: "X", value: 37564, pct: 11, icon: "x" },
+  { label: "YouTube", value: 27319, pct: 8, icon: "youtube" },
 ];
 
 const users = [
@@ -131,21 +130,17 @@ const users = [
   },
 ];
 
-/* ------------------------------------------------------------------ */
-/* Tiny inline brand glyphs (simplified, non-trademarked stand-ins)    */
-/* ------------------------------------------------------------------ */
-
 function SourceIcon({ icon }: { icon: string }) {
-  const base = "flex h-4 w-4 items-center justify-center text-[10px] font-bold rounded-sm";
+  const className = "h-4 w-4 shrink-0";
   switch (icon) {
     case "google":
-      return <span className={`${base} text-emerald-600`}>G</span>;
+      return <FaGoogle className={className} color="#4285F4" aria-hidden="true" />;
     case "chatgpt":
-      return <span className={`${base} text-emerald-600`}>✳</span>;
+      return <OpenAI className={className} color="#10A37F" aria-hidden="true" />;
     case "x":
-      return <span className={`${base} text-emerald-600`}>𝕏</span>;
-    case "linkedin":
-      return <span className={`${base} text-emerald-600`}>in</span>;
+      return <FaXTwitter className={className} color="#111827" aria-hidden="true" />;
+    case "youtube":
+      return <FaYoutube className={className} color="#FF0000" aria-hidden="true" />;
     default:
       return null;
   }
@@ -203,9 +198,9 @@ export default function TrafficSalesCard() {
   const maxSource = Math.max(...sources.map((s) => s.value));
 
   return (
-    <div className="w-full rounded-lg border border-gray-200 bg-white text-sm shadow-sm">
+    <div className="w-full rounded-lg border border-gray-300 bg-white text-sm shadow-sm">
       {/* Title */}
-      <div className="border-b border-gray-100 bg-gray-50 px-5 py-3">
+      <div className="border-b border-gray-200 bg-gray-100 px-5 py-3"> 
         <h2 className="text-[13px] font-medium text-gray-600">Traffic &amp; Sales</h2>
       </div>
 
@@ -223,20 +218,20 @@ export default function TrafficSalesCard() {
           </div>
 
           {/* weekly chart */}
-          <div className="space-y-3 px-5 py-5">
+          <div className="space-y-7 px-5 py-5">
             {weekly.map((d) => (
               <div key={d.day} className="flex items-center gap-4">
-                <span className="w-20 shrink-0 text-gray-400">{d.day}</span>
+                <span className="w-20 shrink-0 text-xs text-gray-600">{d.day}</span>
                 <div className="flex flex-1 flex-col gap-1">
-                  <div className="h-[3px] w-full rounded-full bg-gray-100">
+                  <div className="h-1 w-full rounded-full bg-gray-100">
                     <div
-                      className="h-[3px] rounded-full bg-indigo-500"
+                      className="h-1 rounded-full bg-indigo-500"
                       style={{ width: `${(d.newClients / maxDay) * 100}%` }}
                     />
                   </div>
-                  <div className="h-[3px] w-full rounded-full bg-gray-100">
+                  <div className="h-1 w-full rounded-full bg-gray-100">
                     <div
-                      className="h-[3px] rounded-full bg-red-500"
+                      className="h-1 rounded-full bg-red-500"
                       style={{ width: `${(d.recurring / maxDay) * 100}%` }}
                     />
                   </div>
@@ -262,16 +257,16 @@ export default function TrafficSalesCard() {
             {/* gender */}
             <div className="space-y-3 border-b border-gray-100 pb-5">
               {gender.map((g) => (
-                <div key={g.label} className="flex items-center gap-3">
+                <div key={g.label} className="grid grid-cols-[auto_1fr_auto] items-center gap-x-3 gap-y-2">
                   <User size={16} className="shrink-0 text-gray-400" />
-                  <span className="w-16 shrink-0 text-gray-500">{g.label}</span>
-                  <div className="h-1.5 flex-1 rounded-full bg-gray-100">
+                  <span className="text-gray-500">{g.label}</span>
+                  <span className="w-9 shrink-0 text-right text-gray-500">{g.value}%</span>
+                  <div className="col-span-3 h-1 rounded-full bg-gray-100">
                     <div
-                      className="h-1.5 rounded-full bg-amber-400"
+                      className="h-1 rounded-full bg-amber-400"
                       style={{ width: `${g.value}%` }}
                     />
                   </div>
-                  <span className="w-9 shrink-0 text-right text-gray-500">{g.value}%</span>
                 </div>
               ))}
             </div>
@@ -279,19 +274,18 @@ export default function TrafficSalesCard() {
             {/* sources */}
             <div className="space-y-3 pt-5">
               {sources.map((s) => (
-                <div key={s.label} className="flex items-center gap-3">
+                <div key={s.label} className="grid grid-cols-[auto_1fr_auto] items-center gap-x-3 gap-y-2">
                   <SourceIcon icon={s.icon} />
-                  <span className="w-32 shrink-0 text-gray-500">{s.label}</span>
-                  <div className="h-1.5 flex-1 rounded-full bg-gray-100">
+                  <span className="text-gray-500">{s.label}</span>
+                  <span className="shrink-0 whitespace-nowrap text-right text-gray-500">
+                    {s.value.toLocaleString()} <span className="text-gray-400">({s.pct}%)</span>
+                  </span>
+                  <div className="col-span-3 h-1 rounded-full bg-gray-100">
                     <div
-                      className="h-1.5 rounded-full bg-emerald-500"
+                      className="h-1 rounded-full bg-emerald-600"
                       style={{ width: `${(s.value / maxSource) * 100}%` }}
                     />
                   </div>
-                  <span className="shrink-0 whitespace-nowrap text-right text-gray-500">
-                    {s.value.toLocaleString()}{" "}
-                    <span className="text-gray-400">({s.pct}%)</span>
-                  </span>
                 </div>
               ))}
             </div>
@@ -300,24 +294,24 @@ export default function TrafficSalesCard() {
       </div>
 
       {/* ---------------- TABLE ---------------- */}
-      <div className="overflow-x-auto border-t border-gray-100">
+      <div className="overflow-x-auto m-3 border border-gray-300">
         <table className="w-full min-w-[860px] border-collapse">
           <thead>
-            <tr className="border-b border-gray-100 bg-gray-50 text-gray-500">
-              <th className="w-12 px-5 py-3 text-left font-medium">
+            <tr className="border-b border-gray-200 bg-slate-100 text-gray-900">
+              <th className="w-12 px-5 py-2 text-left font-bold">
                 <Users size={16} />
               </th>
-              <th className="px-2 py-3 text-left font-medium">User</th>
-              <th className="px-2 py-3 text-left font-medium">Country</th>
-              <th className="px-2 py-3 text-left font-medium">Usage</th>
-              <th className="px-2 py-3 text-left font-medium">Payment Method</th>
-              <th className="px-5 py-3 text-left font-medium">Activity</th>
+              <th className="px-2 py-2 text-left font-bold">User</th>
+              <th className="px-2 py-2 text-left font-bold">Country</th>
+              <th className="px-2 py-2 text-left font-bold">Usage</th>
+              <th className="px-2 py-2 text-left font-bold">Payment Method</th>
+              <th className="px-5 py-2 text-left font-bold">Activity</th>
             </tr>
           </thead>
           <tbody>
             {users.map((u) => (
-              <tr key={u.name} className="border-b border-gray-50 last:border-b-0">
-                <td className="px-5 py-4">
+              <tr key={u.name} className="border-b border-gray-250 last:border-b-0">
+                <td className="px-5 py-3">
                   <div className="relative h-9 w-9">
                     <div
                       className={`flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold ${u.avatarColor}`}
@@ -331,31 +325,31 @@ export default function TrafficSalesCard() {
                     />
                   </div>
                 </td>
-                <td className="px-2 py-4">
-                  <p className="font-medium text-gray-700">{u.name}</p>
-                  <p className="text-gray-400">
+                <td className="px-2 py-3">
+                  <p className="font-medium text-gray-900">{u.name}</p>
+                  <p className="text-gray-600">
                     {u.tag} | Registered: {u.registered}
                   </p>
                 </td>
-                <td className="px-2 py-4 text-lg">{u.country}</td>
-                <td className="px-2 py-4">
+                <td className="px-2 py-3 text-lg">{u.country}</td>
+                <td className="px-2 py-3">
                   <div className="flex items-center gap-3">
-                    <span className="w-9 shrink-0 font-medium text-gray-600">{u.usage}%</span>
-                    <div className="h-1.5 w-24 rounded-full bg-gray-100">
+                    <span className="w-9 shrink-0 font-medium text-gray-800">{u.usage}%</span>
+                    <div className="h-1 w-24 rounded-full bg-gray-100">
                       <div
-                        className={`h-1.5 rounded-full ${u.barColor}`}
+                        className={`h-1 rounded-full ${u.barColor}`}
                         style={{ width: `${u.usage}%` }}
                       />
                     </div>
-                    <span className="whitespace-nowrap text-gray-400">{u.range}</span>
+                    <span className="whitespace-nowrap text-gray-600">{u.range}</span>
                   </div>
                 </td>
-                <td className="px-2 py-4">
+                <td className="px-2 py-3">
                   <PaymentIcon type={u.payment} />
                 </td>
-                <td className="px-5 py-4">
-                  <p className="text-gray-400">Last login</p>
-                  <p className="text-gray-600">{u.activity}</p>
+                <td className="px-5 py-3">
+                  <p className="text-gray-600">Last login</p>
+                  <p className="text-gray-800">{u.activity}</p>
                 </td>
               </tr>
             ))}

@@ -157,7 +157,7 @@ const data = {
     },
     {
       title: "Data Grid",
-      url: "#",
+      url: "/dataGrid",
       icon: <Grid3X3Icon className="text-sidebar-foreground/70" />,
       badge: {
         label: "ADD-ON",
@@ -328,8 +328,8 @@ const data = {
       url: "#",
       icon: <BugIcon className="text-sidebar-foreground/70" />,
       items: [
-        { title: "Overview", url: "#" },
-        { title: "Locations", url: "#" },
+        { title: "Error 404", url: "#" },
+        { title: "Error 500", url: "#" },
       ],
     },
   ] satisfies NavMainItem[],

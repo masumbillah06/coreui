@@ -1,4 +1,3 @@
-import { AppSidebar } from "@/components/sidebar/app-sidebar"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import {
@@ -12,7 +11,6 @@ import {
 import { Separator } from "@/components/ui/ui-sidebar/separator"
 import {
   SidebarInset,
-  SidebarProvider,
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
@@ -117,8 +115,6 @@ export default function Accordion({ items }: { items: AccordionItemData[] }) {
 
 export default function Page() {
   return (
-    <SidebarProvider>
-      <AppSidebar />
       <SidebarInset>
         <Header />
         <header className="flex h-12 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
@@ -170,7 +166,6 @@ export default function Page() {
           </div>
         <Footer />  
       </SidebarInset>
-    </SidebarProvider>
   )
 }
 
