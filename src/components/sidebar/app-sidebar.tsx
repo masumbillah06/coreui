@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 import { NavMain, type NavMainItem } from "@/components/sidebar/nav-main"
 import {
@@ -386,7 +387,58 @@ const data = {
   ] satisfies NavMainItem[],
 }
 
+const normalizeRoute = (value: string) =>
+  value.replace(/^\/+|\/+$/g, "").toLowerCase()
+
+const isActiveRoute = (route: string, pathname: string) => {
+  if (!route || route === "#") return false
+  return normalizeRoute(route) === normalizeRoute(pathname)
+}
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+
+  const sidebarData = {
+    dashboard: data.dashboard.map((item) => ({
+      ...item,
+      isActive: isActiveRoute(item.url, pathname),
+    })),
+    uiElements: data.uiElements.map((item) => ({
+      ...item,
+      isActive:
+        isActiveRoute(item.url, pathname) ||
+        (item.items?.some((subItem) => isActiveRoute(subItem.url, pathname)) ?? false),
+      items: item.items?.map((subItem) => ({
+        ...subItem,
+        isActive: isActiveRoute(subItem.url, pathname),
+      })),
+    })),
+    extras: data.extras.map((item) => ({
+      ...item,
+      isActive:
+        isActiveRoute(item.url, pathname) ||
+        (item.items?.some((subItem) => isActiveRoute(subItem.url, pathname)) ?? false),
+      items: item.items?.map((subItem) => ({
+        ...subItem,
+        isActive: isActiveRoute(subItem.url, pathname),
+      })),
+    })),
+    plugins: data.plugins.map((item) => ({
+      ...item,
+      isActive: isActiveRoute(item.url, pathname),
+    })),
+    apps: data.apps.map((item) => ({
+      ...item,
+      isActive:
+        isActiveRoute(item.url, pathname) ||
+        (item.items?.some((subItem) => isActiveRoute(subItem.url, pathname)) ?? false),
+      items: item.items?.map((subItem) => ({
+        ...subItem,
+        isActive: isActiveRoute(subItem.url, pathname),
+      })),
+    })),
+  }
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -401,11 +453,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain label="DASHBOARD" showLabel={false} items={data.dashboard} />
-        <NavMain label="UI ELEMENTS" items={data.uiElements} />
-        <NavMain label="EXTRAS" items={data.extras} />
-        <NavMain label="PLUGINS" items={data.plugins} />
-        <NavMain label="APPS" items={data.apps} />
+        <NavMain label="DASHBOARD" showLabel={false} items={sidebarData.dashboard} />
+        <NavMain label="UI ELEMENTS" items={sidebarData.uiElements} />
+        <NavMain label="EXTRAS" items={sidebarData.extras} />
+        <NavMain label="PLUGINS" items={sidebarData.plugins} />
+        <NavMain label="APPS" items={sidebarData.apps} />
       </SidebarContent>
       <SidebarFooter>
         {/* footer content can be added here if needed */}
