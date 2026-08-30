@@ -55,10 +55,6 @@ const data = {
           url: "/Comps/BreadCrumbs",
         },
         {
-          title: "Buttons",
-          url: "#",
-        },
-        {
           title: "Buttons Group",
           url: "/Comps/ButtonGroups",
         },
@@ -69,7 +65,7 @@ const data = {
         },  
         {
           title: "Cards",
-          url: "#",
+          url: "/Comps/Cards",
         },
         {
           title: "Carousel",
