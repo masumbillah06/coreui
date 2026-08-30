@@ -164,7 +164,7 @@ const data = {
         },
         {
           title: "Checks & Radios",
-          url: "#",
+          url: "/Forms/Checks&Radios",
         },
         {
           title: "Chip Input",
@@ -252,15 +252,18 @@ const data = {
       items: [
         {
           title: "CoreUI Free",
-          url: "#",
+          url: "https://coreui.io/demos/react/latest/default/?theme=light#/icons/coreui-icons",
+          
         },
         {
           title: "CoreUI Flags",
-          url: "#",
+          url: "https://coreui.io/demos/react/latest/default/?theme=light#/icons/flags",
+
         },
         {
           title: "CoreUI Brands",
-          url: "#",
+          url: "https://coreui.io/demos/react/latest/default/?theme=light#/icons/Brands",
+
         },
       ],
     },
@@ -356,22 +359,22 @@ const data = {
         />
       ),
       items: [
-        { title: "Invoice", url: "#", isPro: true },
+        { title: "Invoice", url: "/Invoices", isPro: true },
       ],
     },
-    {
-      title: "Email",
-      url: "#",
-      icon: (
-        <MailOpen className="text-sidebar-foreground/70"
-        />
-      ),
-      items: [
-        { title: "Inbox", url: "#", isPro: true },
-        { title: "Messages", url: "#", isPro: true },
-        { title: "Compose", url: "#", isPro: true },
-      ],
-    }, 
+    // {
+    //   title: "Email",
+    //   url: "#",
+    //   icon: (
+    //     <MailOpen className="text-sidebar-foreground/70"
+    //     />
+    //   ),
+    //   items: [
+    //     { title: "Inbox", url: "#", isPro: true },
+    //     { title: "Messages", url: "#", isPro: true },
+    //     { title: "Compose", url: "#", isPro: true },
+    //   ],
+    // }, 
     {
       title: "Docs",
       url: "#",
