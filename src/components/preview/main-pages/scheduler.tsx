@@ -1,21 +1,4 @@
-import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/ui-sidebar/breadcrumb"
-import { Separator } from "@/components/ui/ui-sidebar/separator"
-import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
-import CoreUIBanner from "@/components/ui/banners/ui-banners"
-import ComponentPreview from "@/components/preview/ComponentPreview"
-import SchedulerResourcesExample from "@/components/preview/main-pages/scheduler"
-import CoreUIBannerAddOn from "@/components/ui/banners/add-on-banner"
-
-const schedulerCode = `'use client'
+'use client'
 
 import { useMemo } from 'react'
 
@@ -25,9 +8,9 @@ const day = (offset: number) => {
   const date = new Date()
   date.setDate(date.getDate() + offset)
 
-  return \`\${date.getFullYear()}-\${pad(date.getMonth() + 1)}-\${pad(
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
     date.getDate(),
-  )}\`
+  )}`
 }
 
 const resources = [
@@ -44,32 +27,32 @@ export default function SchedulerResourcesExample() {
       id: 'a',
       title: 'Board meeting',
       resourceId: 'room-1',
-      start: \`\${currentDay}T09:00\`,
-      end: \`\${currentDay}T11:00\`,
+      start: `${currentDay}T09:00`,
+      end: `${currentDay}T11:00`,
       color: '#3b82f6',
     },
     {
       id: 'b',
       title: 'Workshop',
       resourceId: 'room-2',
-      start: \`\${currentDay}T09:30\`,
-      end: \`\${currentDay}T12:00\`,
+      start: `${currentDay}T09:30`,
+      end: `${currentDay}T12:00`,
       color: '#2eb85c',
     },
     {
       id: 'c',
       title: 'Interview',
       resourceId: 'room-3',
-      start: \`\${currentDay}T10:00\`,
-      end: \`\${currentDay}T10:45\`,
+      start: `${currentDay}T10:00`,
+      end: `${currentDay}T10:45`,
       color: '#e55353',
     },
     {
       id: 'd',
       title: 'All hands',
       resourceId: 'room-1',
-      start: \`\${currentDay}T14:00\`,
-      end: \`\${currentDay}T15:00\`,
+      start: `${currentDay}T14:00`,
+      end: `${currentDay}T15:00`,
       color: '#3b82f6',
     },
   ]
@@ -95,8 +78,8 @@ export default function SchedulerResourcesExample() {
     const height = ((end - start) / 60) * hourHeight
 
     return {
-      top: \`\${top}px\`,
-      height: \`\${height}px\`,
+      top: `${top}px`,
+      height: `${height}px`,
       backgroundColor: event.color,
     }
   }
@@ -205,45 +188,5 @@ export default function SchedulerResourcesExample() {
         </div>
       </div>
     </div>
-  )
-}`
-
-export default function Page() {
-  return (
-    <SidebarInset>
-      <Header />
-      <header className="flex h-12 shrink-0 items-center gap-2 border-b border-slate-300">
-        <div className="flex items-center gap-2 px-4">
-          <Separator orientation="vertical" className="mr-2 data-vertical:h-4 data-vertical:self-auto" />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="#">Scheduler</BreadcrumbLink>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </header>
-
-      <div className="min-h-0 flex-1 overflow-y-auto border-t border-slate-300 bg-slate-100">
-        <div className="mx-auto w-full max-w-305 px-4 py-4">
-          <div className="mb-5">
-            <CoreUIBannerAddOn />
-          </div>
-
-          <div className="space-y-8">
-            <ComponentPreview code={schedulerCode}>
-              <SchedulerResourcesExample />
-            </ComponentPreview>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
-    </SidebarInset>
   )
 }

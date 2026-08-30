@@ -266,7 +266,7 @@ const data = {
     },
     {
       title: "Scheduler",
-      url: "#",
+      url: "/Scheduler",
       icon: (
         <CalendarDays className="text-sidebar-foreground/70"
         />
@@ -290,7 +290,7 @@ const data = {
     },
     {
       title: "Widgets",
-      url: "#",
+      url: "/Widgets",
       icon: (
         <Calculator className="text-sidebar-foreground/70"
         />
@@ -307,8 +307,8 @@ const data = {
       url: "#",
       icon: <LockIcon className="text-sidebar-foreground/70" />,
       items: [
-        { title: "Overview", url: "#" },
-        { title: "Locations", url: "#" },
+        { title: "Login", url: "/Authentication/Login" },
+        { title: "Register", url: "/Authentication/Register" },
       ],
     },
     {
@@ -316,8 +316,8 @@ const data = {
       url: "#",
       icon: <BugIcon className="text-sidebar-foreground/70" />,
       items: [
-        { title: "Error 404", url: "#" },
-        { title: "Error 500", url: "#" },
+        { title: "Error 404", url: "/Error/E404" },
+        { title: "Error 500", url: "/Error/E500" },
       ],
     },
   ] satisfies NavMainItem[],
