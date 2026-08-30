@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/components/preview/previewAndCode/chips/chip-4tsx"  ],
   "exclude": ["node_modules"]
 }

@@ -73,11 +73,7 @@ const data = {
         },
         {
           title: "Chip",
-          url: "#",
-        },
-        {
-          title: "Chip set",
-          url: "#",
+          url: "/Comps/Chip",
         },
         {
           title: "Collapse",
