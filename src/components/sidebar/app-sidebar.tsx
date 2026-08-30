@@ -69,7 +69,7 @@ const data = {
         },
         {
           title: "Carousel",
-          url: "#",
+          url: "/Comps/Carousel",
         },
         {
           title: "Chip",
