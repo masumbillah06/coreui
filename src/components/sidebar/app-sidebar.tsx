@@ -77,45 +77,41 @@ const data = {
         },
         {
           title: "Collapse",
-          url: "#",
+          url: "/Comps/Collapse",
         },
         {
           title: "Dropdowns",
-          url: "#",
-        },
-        {
-          title: "List Group",
-          url: "#",
+          url: "/Comps/Dropdown",
         },
         {
           title: "Loading Buttons",
-          url: "#",
+          url: "/Comps/LoadingButton",
           isPro: true,
         },
-        {
-          title: "Modals",
-          url: "#",
-        },
+        // {
+        //   title: "Modals",
+        //   url: "/Comps/Modals",
+        // },
         {
           title: "Nav & Tabs",
-          url: "#",
+          url: "/Comps/NavTab",
         },
         {
           title: "Pagination",
           url: "#",
         },
-        {
-          title: "Placeholders",
-          url: "#",
-        },
-        {
-          title: "Popovers",
-          url: "#",
-        },
-        {
-          title: "Progress",
-          url: "#",
-        },
+        // {
+        //   title: "Placeholders",
+        //   url: "#",
+        // },
+        // {
+        //   title: "Popovers",
+        //   url: "#",
+        // },
+        // {
+        //   title: "Progress",
+        //   url: "#",
+        // },
         {
           title: "Search Button",
           url: "#",
