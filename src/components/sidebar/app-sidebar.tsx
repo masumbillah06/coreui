@@ -138,7 +138,7 @@ const data = {
         },
         {
           title: "Virtual Scroller",
-          url: "#",
+          url: "/Comps/VrSc",
           isPro: true,
         },
       ],
