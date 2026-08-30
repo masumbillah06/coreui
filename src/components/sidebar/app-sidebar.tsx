@@ -168,11 +168,11 @@ const data = {
         },
         {
           title: "Chip Input",
-          url: "#",
+          url: "/Forms/ChipInput",
         },
         {
           title: "Date Picker",
-          url: "#",
+          url: "/Forms/DatePicker",
           isPro: true,
         },
         {
