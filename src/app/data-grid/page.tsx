@@ -13,7 +13,7 @@ import {
   SidebarInset,
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBannerAddOn from "@/components/ui/banners/add-on-banner"
-import DataGridOne from "@/components/preview/previewAndCode/data-grid-1"
+import DataGridOne from "@/components/preview/preview-comps/data-grid-1"
 import ComponentPreview from "@/components/preview/ComponentPreview"
 
 const dataGridCode = `import DataGridOne from "@/components/preview/previewAndCode/data-grid-1"

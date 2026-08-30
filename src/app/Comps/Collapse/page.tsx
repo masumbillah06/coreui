@@ -12,9 +12,9 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import CollapseExample from "@/components/preview/previewAndCode/collapse/collapse-1"
-import CollapseHorizontalExample from "@/components/preview/previewAndCode/collapse/collapse-2"
-import CollapseMultipleTargetsExample from "@/components/preview/previewAndCode/collapse/collapse-3"
+import CollapseExample from "@/components/preview/preview-comps/collapse/collapse-1"
+import CollapseHorizontalExample from "@/components/preview/preview-comps/collapse/collapse-2"
+import CollapseMultipleTargetsExample from "@/components/preview/preview-comps/collapse/collapse-3"
 
 const collapseCode1 = `"use client"
 

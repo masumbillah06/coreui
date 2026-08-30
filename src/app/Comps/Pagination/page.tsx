@@ -12,10 +12,10 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import PaginationExample from "@/components/preview/previewAndCode/paiginatoin/paigination-1"
-import PaginationWorkingWithIconsExample from "@/components/preview/previewAndCode/paiginatoin/paigination-2"
-import PaginationDisabledAndActiveExample from "@/components/preview/previewAndCode/paiginatoin/paigination-3"
-import PaginationAlignmentExample from "@/components/preview/previewAndCode/paiginatoin/paigination-4"
+import PaginationExample from "@/components/preview/preview-comps/paiginatoin/paigination-1"
+import PaginationWorkingWithIconsExample from "@/components/preview/preview-comps/paiginatoin/paigination-2"
+import PaginationDisabledAndActiveExample from "@/components/preview/preview-comps/paiginatoin/paigination-3"
+import PaginationAlignmentExample from "@/components/preview/preview-comps/paiginatoin/paigination-4"
 
 const paginationCode1 = `export default function PaginationExample() {
   return (

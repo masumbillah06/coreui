@@ -12,8 +12,8 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import SearchButtonExample from "@/components/preview/previewAndCode/search-buttons/search-button-1"
-import SearchButtonCustomShortcutExample from "@/components/preview/previewAndCode/search-buttons/search-button-2"
+import SearchButtonExample from "@/components/preview/preview-comps/search-buttons/search-button-1"
+import SearchButtonCustomShortcutExample from "@/components/preview/preview-comps/search-buttons/search-button-2"
 
 const searchButtonCode1 = `'use client'
 

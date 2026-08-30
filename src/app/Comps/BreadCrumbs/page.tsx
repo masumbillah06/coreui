@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import BreadcrumbExample from "@/components/preview/previewAndCode/breadCrumbs"
+import BreadcrumbExample from "@/components/preview/preview-comps/breadCrumbs"
 
 const breadcrumbCode = `import {
 	Breadcrumb,

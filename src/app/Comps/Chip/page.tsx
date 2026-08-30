@@ -12,10 +12,10 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import ChipExample from "@/components/preview/previewAndCode/chips/chip-1"
-import ChipOutlineExample from "@/components/preview/previewAndCode/chips/chip-2"
-import ChipIconExample from "@/components/preview/previewAndCode/chips/chip-3"
-import ChipVariantsExample from "@/components/preview/previewAndCode/chips/chip-4"
+import ChipExample from "@/components/preview/preview-comps/chips/chip-1"
+import ChipOutlineExample from "@/components/preview/preview-comps/chips/chip-2"
+import ChipIconExample from "@/components/preview/preview-comps/chips/chip-3"
+import ChipVariantsExample from "@/components/preview/preview-comps/chips/chip-4"
 
 const chipCode1 = `export default function ChipExample() {
   return (

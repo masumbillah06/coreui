@@ -12,10 +12,10 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import NavExample from "@/components/preview/previewAndCode/nav-tabs/nav-tabs-1"
-import Nav2Example from "@/components/preview/previewAndCode/nav-tabs/nav-tabs-2"
-import NavTabsExample from "@/components/preview/previewAndCode/nav-tabs/nav-tabs-3"
-import NavEnclosedExample from "@/components/preview/previewAndCode/nav-tabs/nav-tabs-4"
+import NavExample from "@/components/preview/preview-comps/nav-tabs/nav-tabs-1"
+import Nav2Example from "@/components/preview/preview-comps/nav-tabs/nav-tabs-2"
+import NavTabsExample from "@/components/preview/preview-comps/nav-tabs/nav-tabs-3"
+import NavEnclosedExample from "@/components/preview/preview-comps/nav-tabs/nav-tabs-4"
 
 const navCode1 = `export default function NavExample() {
   return (

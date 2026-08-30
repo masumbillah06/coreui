@@ -12,11 +12,11 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import Badge1Example from "@/components/preview/previewAndCode/badges/badge-1"
-import Badge2Example from "@/components/preview/previewAndCode/badges/badge-2"
-import Badge3Example from "@/components/preview/previewAndCode/badges/badge-3"
-import Badge4Example from "@/components/preview/previewAndCode/badges/badge-4"
-import Badge5Example from "@/components/preview/previewAndCode/badges/badge-5"
+import Badge1Example from "@/components/preview/preview-comps/badges/badge-1"
+import Badge2Example from "@/components/preview/preview-comps/badges/badge-2"
+import Badge3Example from "@/components/preview/preview-comps/badges/badge-3"
+import Badge4Example from "@/components/preview/preview-comps/badges/badge-4"
+import Badge5Example from "@/components/preview/preview-comps/badges/badge-5"
 
 const badge1Code = `export default function BadgeExample() {
   return (

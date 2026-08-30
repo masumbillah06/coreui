@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/ui-sidebar/sidebar"
 import ComponentPreview from "@/components/preview/ComponentPreview"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
-import SmartTableExample from "@/components/preview/previewAndCode/smart-table-1"
+import SmartTableExample from "@/components/preview/preview-comps/smart-table-1"
 
 const smartTableCode = `import SmartTableExample from "@/components/preview/previewAndCode/smart-table-1"
 

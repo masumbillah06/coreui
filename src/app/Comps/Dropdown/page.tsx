@@ -12,10 +12,10 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import DropdownSingleButtonExample from "@/components/preview/previewAndCode/dropdowns/dropdown-1"
-import DropdownSingleButton2Example from "@/components/preview/previewAndCode/dropdowns/dropdown-2"
-import DropdownSplitButtonExample from "@/components/preview/previewAndCode/dropdowns/dropdown-3"
-import DropdownSizingLargeExample from "@/components/preview/previewAndCode/dropdowns/dropdown-4"
+import DropdownSingleButtonExample from "@/components/preview/preview-comps/dropdowns/dropdown-1"
+import DropdownSingleButton2Example from "@/components/preview/preview-comps/dropdowns/dropdown-2"
+import DropdownSplitButtonExample from "@/components/preview/preview-comps/dropdowns/dropdown-3"
+import DropdownSizingLargeExample from "@/components/preview/preview-comps/dropdowns/dropdown-4"
 
 const dropdownCode1 = `'use client'
 

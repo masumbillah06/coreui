@@ -12,9 +12,9 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import SpinnerBorderExample from "@/components/preview/previewAndCode/spinners/spinner-1"
-import SpinnerGrowExample from "@/components/preview/previewAndCode/spinners/spinner-2"
-import SpinnerButtonsExample from "@/components/preview/previewAndCode/spinners/spinner-3"
+import SpinnerBorderExample from "@/components/preview/preview-comps/spinners/spinner-1"
+import SpinnerGrowExample from "@/components/preview/preview-comps/spinners/spinner-2"
+import SpinnerButtonsExample from "@/components/preview/preview-comps/spinners/spinner-3"
 
 const spinnerCode1 = `export default function SpinnerBorderExample() {
   return (

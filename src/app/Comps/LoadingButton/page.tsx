@@ -12,8 +12,8 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import LoadingButtonExample from "@/components/preview/previewAndCode/loading-buttons/loading-button-1"
-import LoadingButtonGrowExample from "@/components/preview/previewAndCode/loading-buttons/loading-button-2"
+import LoadingButtonExample from "@/components/preview/preview-comps/loading-buttons/loading-button-1"
+import LoadingButtonGrowExample from "@/components/preview/preview-comps/loading-buttons/loading-button-2"
 
 const loadingButtonCode1 = `'use client'
 

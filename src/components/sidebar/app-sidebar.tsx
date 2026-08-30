@@ -122,7 +122,7 @@ const data = {
         },
         {
           title: "Tables",
-          url: "#",
+          url: "Comps/Tables",
         },
         {
           title: "Tabs",
@@ -130,7 +130,7 @@ const data = {
         },
         {
           title: "Toasts",
-          url: "#",
+          url: "/Comps/Toast",
         },
         {
           title: "Tooltips",

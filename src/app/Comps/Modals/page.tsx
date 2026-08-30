@@ -12,9 +12,9 @@ import { Separator } from "@/components/ui/ui-sidebar/separator"
 import { SidebarInset } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import ModalExample from "@/components/preview/previewAndCode/modals/modal-1"
-import ModalLiveDemoExample from "@/components/preview/previewAndCode/modals/modal-2"
-import ModalScrollingLongContent2Example from "@/components/preview/previewAndCode/modals/modal-3"
+import ModalExample from "@/components/preview/preview-comps/modals/modal-1"
+import ModalLiveDemoExample from "@/components/preview/preview-comps/modals/modal-2"
+import ModalScrollingLongContent2Example from "@/components/preview/preview-comps/modals/modal-3"
 
 const modalCode1 = `'use client'
 

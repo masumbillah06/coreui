@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import Accordion from "@/components/preview/previewAndCode/accordion/accordion"
-import AccordionAlways from "@/components/preview/previewAndCode/accordion/accordionAlways"
+import Accordion from "@/components/preview/preview-comps/accordion/accordion"
+import AccordionAlways from "@/components/preview/preview-comps/accordion/accordionAlways"
 
 const accordionCode = `"use client";
 
