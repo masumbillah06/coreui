@@ -134,7 +134,7 @@ const data = {
         },
         {
           title: "Tooltips",
-          url: "#",
+          url: "/Comps/Tooltip",
         },
         {
           title: "Virtual Scroller",
