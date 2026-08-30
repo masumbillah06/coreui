@@ -64,9 +64,9 @@ const data = {
         },
         {
           title: "Calendar",
-          url: "#",
+          url: "/Comps/Calendar",
           isPro: true,
-        },
+        },  
         {
           title: "Cards",
           url: "#",
