@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/ui-sidebar/sidebar"
 import CoreUIBanner from "@/components/ui/banners/ui-banners"
 import ComponentPreview from "@/components/preview/ComponentPreview"
-import AlertExample from "@/components/preview/previewAndCode/alert"
-import AlertLinkColorExample from "@/components/preview/previewAndCode/alertExampleLink"
-import AlertAdditionalContentExample from "@/components/preview/previewAndCode/alertWelldone"
-import AlertDismissingExample from "@/components/preview/previewAndCode/alertMissing"
+import AlertExample from "@/components/preview/previewAndCode/alert/alert"
+import AlertLinkColorExample from "@/components/preview/previewAndCode/alert/alertExampleLink"
+import AlertAdditionalContentExample from "@/components/preview/previewAndCode/alert/alertWelldone"
+import AlertDismissingExample from "@/components/preview/previewAndCode/alert/alertMissing"
 
 const alertCode = `import { type ReactNode } from "react";
 

@@ -48,7 +48,7 @@ const data = {
         },
         {
           title: "Badge",
-          url: "#",
+          url: "/Comps/Badge",
         },
         {
           title: "Breadcrumb",
