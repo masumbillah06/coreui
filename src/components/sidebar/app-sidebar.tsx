@@ -98,7 +98,7 @@ const data = {
         },
         {
           title: "Pagination",
-          url: "#",
+          url: "/Comps/Pagination",
         },
         // {
         //   title: "Placeholders",
@@ -114,11 +114,11 @@ const data = {
         // },
         {
           title: "Search Button",
-          url: "#",
+          url: "/Comps/SearchButton",
         },
         {
           title: "Spinners",
-          url: "#",
+          url: "/Comps/Spinner",
         },
         {
           title: "Tables",
